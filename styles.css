@@ -405,3 +405,67 @@ footer {
     text-align: center;
   }
 }
+/* =========================
+   FAMILY SECTION
+========================= */
+
+.family-section {
+
+  background: #eef7e7;
+}
+
+.family-container {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 40px;
+
+  align-items: center;
+}
+
+.family-photo {
+
+  width: 100%;
+
+  height: 500px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+}
+
+.family-message {
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.family-message h3 {
+
+  color: #1f5c2e;
+
+  font-size: 34px;
+
+  margin-bottom: 20px;
+}
+
+.family-message p {
+
+  margin-bottom: 18px;
+
+  font-size: 18px;
+
+  color: #334433;
+}
