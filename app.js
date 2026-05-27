@@ -1,6 +1,4 @@
-// =========================
 // NAVBAR + SCROLL
-// =========================
 
 const header = document.querySelector("header");
 const progress = document.getElementById("scrollProgress");
@@ -15,9 +13,7 @@ window.addEventListener("scroll", () => {
   progress.style.width = `${scrollPercent}%`;
 });
 
-// =========================
 // MOBILE MENU
-// =========================
 
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
@@ -32,9 +28,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
-// =========================
 // SCROLL REVEAL
-// =========================
 
 const revealElements = document.querySelectorAll(
   ".work-card, .gallery-img, .team-card, .contact-box, .area-box"
@@ -48,9 +42,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  {
-    threshold: 0.15,
-  }
+  { threshold: 0.15 }
 );
 
 revealElements.forEach((el) => {
@@ -58,9 +50,7 @@ revealElements.forEach((el) => {
   observer.observe(el);
 });
 
-// =========================
 // COUNTER ANIMATION
-// =========================
 
 const counters = document.querySelectorAll("[data-count]");
 let countersStarted = false;
@@ -99,9 +89,7 @@ function startCounters() {
 window.addEventListener("scroll", startCounters);
 window.addEventListener("load", startCounters);
 
-// =========================
 // IMAGE MODAL
-// =========================
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
@@ -111,6 +99,7 @@ document.querySelectorAll(".gallery-img").forEach((img) => {
   img.addEventListener("click", () => {
     modal.style.display = "flex";
     modalImg.src = img.src;
+    modalImg.alt = img.alt;
   });
 });
 
@@ -124,4 +113,8 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-console.log("ECJ Services website loaded");
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    modal.style.display = "none";
+  }
+});
