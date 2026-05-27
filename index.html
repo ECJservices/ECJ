@@ -2,336 +2,279 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>ECJ Services | Lawn Care & Outdoor Services</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    } 
-
-    body {
-      background: #f5f8f2;
-      color: #1f2d1f;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #1f5c2e;
-      color: white;
-      padding: 24px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header h2 {
-      font-size: 26px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .hero {
-      min-height: 85vh;
-      padding: 80px 8%;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(rgba(31,92,46,.85), rgba(31,92,46,.85)),
-      url("lawn.jpg") center/cover no-repeat;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 650px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 20px;
-      line-height: 1.1;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      display: inline-block;
-      background: #c8f169;
-      color: #1f2d1f;
-      padding: 14px 26px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-right: 12px;
-    }
-
-    .btn.secondary {
-      background: white;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      color: #1f5c2e;
-    }
-
-    .section-title p {
-      color: #5f6f5f;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      padding: 28px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-      border: 1px solid #e1eadb;
-    }
-
-    .card h3 {
-      margin-bottom: 12px;
-      color: #1f5c2e;
-    }
-
-    .about {
-      background: white;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .about h2 {
-      font-size: 36px;
-      color: #1f5c2e;
-      margin-bottom: 15px;
-    }
-
-    .about ul {
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-
-    .quote-box {
-      background: #1f5c2e;
-      color: white;
-      padding: 40px;
-      border-radius: 20px;
-    }
-<section id="gallery" class="gallery-section">
-  <div class="section-title">
-    <h2>Our Work</h2>
-    <p>See examples of cleanups, lawn care, and before-and-after transformations.</p>
-  </div>
-
-  <div class="gallery-grid">
-    <img src="images/lawn1.jpg" alt="Freshly cut lawn">
-    <img src="images/lawn2.jpg" alt="Yard cleanup">
-    <img src="images/lawn3.jpg" alt="Lawn edging">
-  </div>
-
-  <div class="section-title small-title">
-    <h2>Before & After</h2>
-    <p>Drag the slider to reveal the transformation.</p>
-  </div>
-
-  <div class="before-after-grid">
-
-    <div class="before-after">
-      <img src="images/before1.jpg" alt="Before lawn cleanup">
-      <img src="images/after1.jpg" alt="After lawn cleanup" class="after-img">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-
-    <div class="before-after">
-      <img src="images/before2.jpg" alt="Before yard work">
-      <img src="images/after2.jpg" alt="After yard work" class="after-img">
-      <input type="range" min="0" max="100" value="50" class="slider">
-    </div>
-
-  </div>
-</section>
-    .contact {
-      text-align: center;
-      background: #eaf3e4;
-    }
-
-    .contact-box {
-      background: white;
-      max-width: 700px;
-      margin: auto;
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,.08);
-    }
-
-    .contact h2 {
-      color: #1f5c2e;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
-
-    .contact-info {
-      margin: 25px 0;
-      font-size: 18px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #1f5c2e;
-      color: white;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav a {
-        margin: 0 8px;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .about {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <header>
-    <h2>ECJ Services</h2>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav class="navbar">
+      <h2 class="logo">ECJ Services</h2>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
+
     <div class="hero-content">
-      <h1>Reliable Lawn Care & Outdoor Services</h1>
+      <h1>Professional Lawn Care & Outdoor Services</h1>
+
       <p>
-        ECJ Services helps keep your property clean, healthy, and well-maintained with dependable lawn care and outdoor support.
+        Reliable lawn mowing, yard cleanup, trimming, and outdoor maintenance
+        to keep your property looking its best year-round.
       </p>
-      <a href="#contact" class="btn">Request a Free Quote</a>
-      <a href="#services" class="btn secondary">View Services</a>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn">
+          Get Free Quote
+        </a>
+
+        <a href="#gallery" class="btn secondary">
+          View Our Work
+        </a>
+      </div>
     </div>
+
   </section>
 
-  <section id="services">
+  <!-- SERVICES -->
+  <section id="services" class="section">
+
     <div class="section-title">
       <h2>Our Services</h2>
-      <p>Professional outdoor services for homes, yards, and small businesses.</p>
+
+      <p>
+        Quality outdoor services for homes and businesses.
+      </p>
     </div>
 
-    <div class="services">
+    <div class="services-grid">
+
       <div class="card">
         <h3>Lawn Mowing</h3>
-        <p>Routine mowing to keep your yard clean, even, and looking its best.</p>
+        <p>
+          Professional mowing services to keep your yard clean and healthy.
+        </p>
       </div>
 
       <div class="card">
         <h3>Trimming & Edging</h3>
-        <p>Clean edges around sidewalks, driveways, fences, and landscaping areas.</p>
+        <p>
+          Sharp edges and detailed trimming around sidewalks and driveways.
+        </p>
       </div>
 
       <div class="card">
         <h3>Yard Cleanup</h3>
-        <p>Removal of leaves, branches, debris, and overgrowth from outdoor spaces.</p>
+        <p>
+          Removal of leaves, debris, weeds, and overgrown vegetation.
+        </p>
       </div>
 
       <div class="card">
         <h3>Mulching</h3>
-        <p>Fresh mulch installation to improve curb appeal and protect landscaping.</p>
+        <p>
+          Fresh mulch installation to improve appearance and landscaping.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Seasonal Maintenance</h3>
-        <p>Spring and fall cleanup services to prepare your yard for the season.</p>
+        <h3>Seasonal Cleanup</h3>
+        <p>
+          Spring and fall cleanup services to prepare your property.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Small Outdoor Jobs</h3>
-        <p>Need help with another outdoor task? ECJ Services can assist with related work.</p>
+        <h3>Outdoor Projects</h3>
+        <p>
+          Additional outdoor maintenance and small property improvement jobs.
+        </p>
       </div>
+
     </div>
+
   </section>
 
-  <section id="about" class="about">
-    <div>
-      <h2>Why Choose ECJ Services?</h2>
+  <!-- GALLERY -->
+  <section id="gallery" class="section gallery-section">
+
+    <div class="section-title">
+      <h2>Our Work</h2>
+
       <p>
-        ECJ Services is built on dependable work, clear communication, and attention to detail.
-        Whether you need weekly lawn care or a one-time yard cleanup, our goal is to make your property look clean, cared for, and welcoming.
+        Recent lawn care and landscaping projects.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <img src="images/lawn1.jpg" alt="Lawn service">
+
+      <img src="images/lawn2.jpg" alt="Yard cleanup">
+
+      <img src="images/lawn3.jpg" alt="Freshly cut grass">
+
+    </div>
+
+    <div class="section-title small-title">
+      <h2>Before & After</h2>
+
+      <p>
+        Slide to reveal the transformation.
+      </p>
+    </div>
+
+    <div class="before-after-grid">
+
+      <!-- BEFORE AFTER 1 -->
+      <div class="before-after">
+
+        <img src="images/before1.jpg" alt="Before lawn cleanup">
+
+        <img
+          src="images/after1.jpg"
+          alt="After lawn cleanup"
+          class="after-img"
+        >
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="slider"
+        >
+
+      </div>
+
+      <!-- BEFORE AFTER 2 -->
+      <div class="before-after">
+
+        <img src="images/before2.jpg" alt="Before yard cleanup">
+
+        <img
+          src="images/after2.jpg"
+          alt="After yard cleanup"
+          class="after-img"
+        >
+
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value="50"
+          class="slider"
+        >
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about-section">
+
+    <div class="about-content">
+
+      <h2>Why Choose ECJ Services?</h2>
+
+      <p>
+        ECJ Services is committed to dependable work, strong communication,
+        and quality outdoor care. Whether you need recurring lawn service
+        or a one-time cleanup, we strive to deliver professional results
+        every time.
       </p>
 
       <ul>
-        <li>Reliable and professional service</li>
-        <li>Affordable lawn care options</li>
-        <li>Residential and small business support</li>
-        <li>Flexible scheduling</li>
+        <li>Reliable scheduling</li>
+        <li>Affordable pricing</li>
+        <li>Professional appearance</li>
+        <li>Residential & commercial support</li>
         <li>Free estimates available</li>
       </ul>
+
     </div>
 
     <div class="quote-box">
-      <h2>Clean Yard. Better Curb Appeal.</h2>
+
+      <h2>Clean Yards Build Better First Impressions</h2>
+
       <p>
-        From regular mowing to seasonal cleanup, ECJ Services helps take the stress out of maintaining your outdoor space.
+        From lawn mowing to full property cleanups,
+        ECJ Services helps keep your outdoor space
+        clean, polished, and welcoming.
       </p>
+
     </div>
+
   </section>
 
-  <section id="contact" class="contact">
+  <!-- CONTACT -->
+  <section id="contact" class="section contact-section">
+
     <div class="contact-box">
+
       <h2>Get a Free Quote</h2>
-      <p>Contact ECJ Services today to discuss your lawn care or outdoor service needs.</p>
+
+      <p>
+        Reach out today to discuss your lawn care or outdoor service needs.
+      </p>
 
       <div class="contact-info">
-        <p><strong>Phone:</strong> <a href="tel:0000000000">(000) 000-0000</a></p>
-        <p><strong>Email:</strong> <a href="mailto:ecjservices@email.com">ecjservices@email.com</a></p>
-        <p><strong>Service Area:</strong> Local residential and small business properties</p>
+
+        <p>
+          <strong>Phone:</strong>
+          <a href="tel:0000000000">(000) 000-0000</a>
+        </p>
+
+        <p>
+          <strong>Email:</strong>
+          <a href="mailto:ecjservices@email.com">
+            ecjservices@email.com
+          </a>
+        </p>
+
       </div>
 
-      <a href="tel:0000000000" class="btn">Call Now</a>
-      <a href="mailto:ecjservices@email.com" class="btn secondary">Send Email</a>
+      <div class="contact-buttons">
+
+        <a href="tel:0000000000" class="btn">
+          Call Now
+        </a>
+
+        <a
+          href="mailto:ecjservices@email.com"
+          class="btn secondary"
+        >
+          Send Email
+        </a>
+
+      </div>
+
     </div>
+
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2026 ECJ Services. All Rights Reserved.</p>
   </footer>
+
+  <script src="js/app.js"></script>
 
 </body>
 </html>
