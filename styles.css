@@ -4,9 +4,7 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, sans-serif;
@@ -29,12 +27,7 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background:
-    radial-gradient(
-      circle,
-      rgba(200, 241, 105, 0.18) 1px,
-      transparent 1px
-    );
+  background: radial-gradient(circle, rgba(200, 241, 105, 0.18) 1px, transparent 1px);
   background-size: 40px 40px;
   animation: floatBg 18s linear infinite;
   z-index: -1;
@@ -48,7 +41,6 @@ header {
 
   background: rgba(16, 42, 20, 0.65);
   backdrop-filter: blur(12px);
-
   transition: 0.3s ease;
 }
 
@@ -59,7 +51,6 @@ header.scrolled {
 
 .navbar {
   padding: 20px 8%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -83,9 +74,7 @@ header.scrolled {
   font-weight: bold;
 }
 
-.nav-links a:hover {
-  color: #c8f169;
-}
+.nav-links a:hover { color: #c8f169; }
 
 .menu-toggle {
   display: none;
@@ -98,25 +87,19 @@ header.scrolled {
 
 .hero {
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
   padding: 0 8%;
 
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("lawn/hero-bg.jpeg");
 
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-
   color: white;
 }
 
@@ -138,22 +121,14 @@ header.scrolled {
 
 .btn {
   display: inline-block;
-
   background: #c8f169;
   color: #1f2d1f;
-
   padding: 15px 30px;
   margin: 10px;
-
   border-radius: 12px;
-
   text-decoration: none;
   font-weight: bold;
-
   transition: 0.3s ease;
-
-  position: relative;
-  overflow: hidden;
 }
 
 .btn:hover {
@@ -161,13 +136,9 @@ header.scrolled {
   background: #ddff8e;
 }
 
-.btn.secondary {
-  background: white;
-}
+.btn.secondary { background: white; }
 
-.section {
-  padding: 90px 8%;
-}
+.section { padding: 90px 8%; }
 
 .section-title {
   text-align: center;
@@ -179,20 +150,15 @@ header.scrolled {
   color: #1f5c2e;
 }
 
-.section-title p {
-  color: #5f6f5f;
-}
+.section-title p { color: #5f6f5f; }
 
 .stats-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 25px;
-
   padding: 50px 8%;
-
   background: #1f5c2e;
   color: white;
-
   text-align: center;
 }
 
@@ -201,9 +167,7 @@ header.scrolled {
   color: #c8f169;
 }
 
-.all-work-section {
-  background: #eef7e7;
-}
+.all-work-section { background: #eef7e7; }
 
 .all-work-grid {
   display: grid;
@@ -213,28 +177,20 @@ header.scrolled {
 
 .work-card {
   background: white;
-
   padding: 32px;
-
   border-radius: 22px;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
   transition: 0.3s ease;
 }
 
-.work-card:hover {
-  transform: translateY(-5px);
-}
+.work-card:hover { transform: translateY(-5px); }
 
 .work-card h3 {
   color: #1f5c2e;
   margin-bottom: 12px;
 }
 
-.gallery-section {
-  background: #eaf3e4;
-}
+.gallery-section { background: #eaf3e4; }
 
 .gallery-grid {
   display: grid;
@@ -242,28 +198,22 @@ header.scrolled {
   gap: 24px;
 }
 
-.gallery-grid img {
+.gallery-img {
   width: 100%;
   height: 280px;
-
   object-fit: cover;
-
   border-radius: 20px;
-
   cursor: pointer;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-
   transition: 0.4s ease;
 }
 
-.gallery-grid img:hover {
+.gallery-img:hover {
   transform: scale(1.04);
+  filter: brightness(0.9);
 }
 
-.team-section {
-  background: white;
-}
+.team-section { background: white; }
 
 .team-grid {
   display: grid;
@@ -273,24 +223,17 @@ header.scrolled {
 
 .team-card {
   background: #f5f8f2;
-
   padding: 30px;
-
   border-radius: 22px;
-
   text-align: center;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
 .team-card img {
   width: 100%;
   height: 280px;
-
   object-fit: cover;
-
   border-radius: 18px;
-
   margin-bottom: 20px;
 }
 
@@ -299,23 +242,15 @@ header.scrolled {
   margin-bottom: 10px;
 }
 
-.areas-section {
-  background: #f5f8f2;
-}
+.areas-section { background: #f5f8f2; }
 
 .area-box {
   background: white;
-
   max-width: 800px;
-
   margin: auto;
-
   padding: 40px;
-
   border-radius: 22px;
-
   text-align: center;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
@@ -326,15 +261,10 @@ header.scrolled {
 
 .contact-box {
   background: white;
-
   max-width: 720px;
-
   margin: auto;
-
   padding: 50px;
-
   border-radius: 24px;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
@@ -362,63 +292,51 @@ footer {
 
 .floating-call {
   position: fixed;
-
   right: 20px;
   bottom: 20px;
-
   background: #c8f169;
   color: #1f2d1f;
-
   padding: 15px 22px;
-
   border-radius: 999px;
-
   text-decoration: none;
   font-weight: bold;
-
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
-
   z-index: 9999;
 }
 
+/* IMAGE MODAL */
+
 .modal {
   display: none;
-
   position: fixed;
-
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.92);
-
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.94);
   justify-content: center;
   align-items: center;
-
   padding: 40px;
-
-  z-index: 99999;
 }
 
 .modal-content {
-  max-width: 90%;
-  max-height: 90%;
-
+  max-width: 92%;
+  max-height: 92%;
   border-radius: 18px;
-
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   animation: zoomIn 0.3s ease;
 }
 
 .close-modal {
   position: absolute;
-
   top: 25px;
   right: 40px;
-
   color: white;
-
-  font-size: 50px;
-
+  font-size: 55px;
+  font-weight: bold;
   cursor: pointer;
+  transition: 0.3s ease;
 }
+
+.close-modal:hover { transform: scale(1.1); }
 
 .hidden {
   opacity: 0;
@@ -456,50 +374,30 @@ footer {
 }
 
 @keyframes floatBg {
-  from {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-80px);
-  }
+  from { transform: translateY(0); }
+  to { transform: translateY(-80px); }
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   .nav-links {
     position: absolute;
-
     top: 75px;
     right: 8%;
-
     background: rgba(16, 42, 20, 0.97);
-
     flex-direction: column;
-
     width: 220px;
-
     padding: 25px;
-
     border-radius: 18px;
-
     display: none;
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  .nav-links.active { display: flex; }
 
-  .hero h1 {
-    font-size: 42px;
-  }
+  .hero h1 { font-size: 42px; }
 
-  .hero p {
-    font-size: 18px;
-  }
+  .hero p { font-size: 18px; }
 
   .floating-call {
     left: 20px;
