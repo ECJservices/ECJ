@@ -1,6 +1,6 @@
 /* =========================
    RESET
-========================= */ 
+========================= */
 
 * {
   margin: 0;
@@ -84,7 +84,7 @@ header {
       rgba(0, 0, 0, 0.45),
       rgba(0, 0, 0, 0.45)
     ),
-    url("../images/hero-bg.jpg");
+    url("hero-bg.jpeg");
 
   background-size: cover;
   background-position: center;
@@ -110,10 +110,6 @@ header {
   font-size: 21px;
 
   margin-bottom: 35px;
-}
-
-.hero-buttons {
-  margin-top: 10px;
 }
 
 /* =========================
