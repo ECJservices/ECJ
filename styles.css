@@ -438,6 +438,8 @@ footer {
 
   box-shadow:
     0 10px 30px rgba(0,0,0,.15);
+  margin: auto;
+  display: block;
 }
 
 .family-message {
@@ -450,6 +452,8 @@ footer {
 
   box-shadow:
     0 10px 30px rgba(0,0,0,.08);
+  text-align: center;
+  
 }
 
 .family-message h3 {
@@ -459,6 +463,8 @@ footer {
   font-size: 34px;
 
   margin-bottom: 20px;
+  text-align: center;
+  
 }
 
 .family-message p {
@@ -468,4 +474,6 @@ footer {
   font-size: 18px;
 
   color: #334433;
+  text-align: center;
+  
 }
