@@ -297,3 +297,71 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+/* =========================
+   SCROLL ANIMATIONS
+========================= */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
+
+header.scrolled {
+  background: rgba(16, 42, 20, 0.97);
+  box-shadow: 0 4px 20px rgba(0,0,0,.2);
+}
+
+/* =========================
+   GALLERY EFFECTS
+========================= */
+
+.gallery-grid img {
+  transition: .4s ease;
+}
+
+/* =========================
+   RIPPLE EFFECT
+========================= */
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+
+  width: 12px;
+  height: 12px;
+
+  background: rgba(255,255,255,.7);
+
+  border-radius: 50%;
+
+  transform: translate(-50%, -50%);
+  animation: rippleEffect .6s linear;
+}
+
+@keyframes rippleEffect {
+
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(20);
+  }
+
+}
