@@ -1,90 +1,226 @@
 // =========================
-// NAVBAR SCROLL EFFECT
+// NAVBAR + SCROLL
 // =========================
+
+const header = document.querySelector("header");
+
+const progress =
+  document.getElementById("scrollProgress");
 
 window.addEventListener("scroll", () => {
 
-  const header = document.querySelector("header");
+  header.classList.toggle(
+    "scrolled",
+    window.scrollY > 50
+  );
 
-  if (window.scrollY > 50) {
-    header.classList.add("scrolled");
+  const scrollTop = window.scrollY;
+
+  const docHeight =
+    document.body.scrollHeight - window.innerHeight;
+
+  const scrollPercent =
+    (scrollTop / docHeight) * 100;
+
+  progress.style.width = `${scrollPercent}%`;
+
+});
+
+// =========================
+// MOBILE MENU
+// =========================
+
+const menuToggle =
+  document.getElementById("menuToggle");
+
+const navLinks =
+  document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+
+  navLinks.classList.toggle("active");
+
+});
+
+// =========================
+// DARK MODE
+// =========================
+
+const darkToggle =
+  document.getElementById("darkToggle");
+
+darkToggle.addEventListener("click", () => {
+
+  document.body.classList.toggle("dark");
+
+  if (
+    document.body.classList.contains("dark")
+  ) {
+
+    darkToggle.textContent = "☀️";
+
+    localStorage.setItem("theme", "dark");
+
   } else {
-    header.classList.remove("scrolled");
+
+    darkToggle.textContent = "🌙";
+
+    localStorage.setItem("theme", "light");
+
   }
 
 });
 
+if (localStorage.getItem("theme") === "dark") {
+
+  document.body.classList.add("dark");
+
+  darkToggle.textContent = "☀️";
+
+}
+
 // =========================
-// FADE IN ON SCROLL
+// SCROLL REVEAL
 // =========================
 
 const revealElements = document.querySelectorAll(
-  ".card, .gallery-grid img, .team-card, .about-content, .quote-box, .contact-box"
+  ".work-card, .gallery-img, .team-card, .contact-box, .area-box"
 );
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver(
 
-  entries.forEach((entry) => {
+  (entries) => {
 
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
+    entries.forEach((entry) => {
 
-  });
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
 
-}, {
-  threshold: 0.15
-});
+    });
+
+  },
+
+  {
+    threshold: 0.15
+  }
+
+);
 
 revealElements.forEach((el) => {
+
   el.classList.add("hidden");
+
   observer.observe(el);
-});
-
-// =========================
-// GALLERY IMAGE POP EFFECT
-// =========================
-
-const galleryImages = document.querySelectorAll(".gallery-grid img");
-
-galleryImages.forEach((img) => {
-
-  img.addEventListener("mouseenter", () => {
-    img.style.transform = "scale(1.03)";
-  });
-
-  img.addEventListener("mouseleave", () => {
-    img.style.transform = "scale(1)";
-  });
 
 });
 
 // =========================
-// BUTTON RIPPLE EFFECT
+// COUNTER ANIMATION
 // =========================
 
-const buttons = document.querySelectorAll(".btn");
+const counters =
+  document.querySelectorAll("[data-count]");
 
-buttons.forEach((button) => {
+let countersStarted = false;
 
-  button.addEventListener("click", function (e) {
+function startCounters() {
 
-    const circle = document.createElement("span");
+  if (countersStarted) return;
 
-    circle.classList.add("ripple");
+  const statsSection =
+    document.querySelector(".stats-section");
 
-    const rect = button.getBoundingClientRect();
+  const sectionPosition =
+    statsSection.getBoundingClientRect().top;
 
-    circle.style.left = `${e.clientX - rect.left}px`;
-    circle.style.top = `${e.clientY - rect.top}px`;
+  const screenPosition =
+    window.innerHeight - 100;
 
-    this.appendChild(circle);
+  if (sectionPosition < screenPosition) {
 
-    setTimeout(() => {
-      circle.remove();
-    }, 600);
+    countersStarted = true;
+
+    counters.forEach((counter) => {
+
+      const target =
+        Number(counter.dataset.count);
+
+      let current = 0;
+
+      const increment =
+        Math.ceil(target / 60);
+
+      const updateCounter = () => {
+
+        current += increment;
+
+        if (current >= target) {
+
+          counter.textContent = target + "+";
+
+        } else {
+
+          counter.textContent = current;
+
+          requestAnimationFrame(updateCounter);
+
+        }
+
+      };
+
+      updateCounter();
+
+    });
+
+  }
+
+}
+
+window.addEventListener(
+  "scroll",
+  startCounters
+);
+
+// =========================
+// IMAGE MODAL
+// =========================
+
+const modal =
+  document.getElementById("imageModal");
+
+const modalImg =
+  document.getElementById("modalImg");
+
+const closeModal =
+  document.querySelector(".close-modal");
+
+document.querySelectorAll(".gallery-img")
+.forEach((img) => {
+
+  img.addEventListener("click", () => {
+
+    modal.style.display = "flex";
+
+    modalImg.src = img.src;
 
   });
+
+});
+
+closeModal.addEventListener("click", () => {
+
+  modal.style.display = "none";
+
+});
+
+modal.addEventListener("click", (e) => {
+
+  if (e.target === modal) {
+
+    modal.style.display = "none";
+
+  }
 
 });
 
