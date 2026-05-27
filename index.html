@@ -141,7 +141,39 @@
       padding: 40px;
       border-radius: 20px;
     }
+<section id="gallery" class="gallery-section">
+  <div class="section-title">
+    <h2>Our Work</h2>
+    <p>See examples of cleanups, lawn care, and before-and-after transformations.</p>
+  </div>
 
+  <div class="gallery-grid">
+    <img src="images/lawn1.jpg" alt="Freshly cut lawn">
+    <img src="images/lawn2.jpg" alt="Yard cleanup">
+    <img src="images/lawn3.jpg" alt="Lawn edging">
+  </div>
+
+  <div class="section-title small-title">
+    <h2>Before & After</h2>
+    <p>Drag the slider to reveal the transformation.</p>
+  </div>
+
+  <div class="before-after-grid">
+
+    <div class="before-after">
+      <img src="images/before1.jpg" alt="Before lawn cleanup">
+      <img src="images/after1.jpg" alt="After lawn cleanup" class="after-img">
+      <input type="range" min="0" max="100" value="50" class="slider">
+    </div>
+
+    <div class="before-after">
+      <img src="images/before2.jpg" alt="Before yard work">
+      <img src="images/after2.jpg" alt="After yard work" class="after-img">
+      <input type="range" min="0" max="100" value="50" class="slider">
+    </div>
+
+  </div>
+</section>
     .contact {
       text-align: center;
       background: #eaf3e4;
